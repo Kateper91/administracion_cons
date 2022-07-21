@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/beb587f537.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./administracion.html">Administracion </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./torneos.html">Torneos</a>
+              </li>
+            </ul>
+          </div>
+          <button class="switch" id="switch">
+            <span> <i class="fa-solid fa-sun"></i></span>
+            <span> <i class="fa-solid fa-moon"></i> </span>
+          </button>
+        </div>
+      </nav>
+<div class="title">
+    <h1>Torneos</h1>
+</div>
+<div class="banner">
+    <img src="./imagenes/banner_tenis_mobile.jpg" alt="">
+</div>
+<div class="row row_content">
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 barra_lateral">
+        <ul>
+            <li>Mayores</li>
+            <li>Menores</li>
+            <li>Partidos</li>
+            <li>Reglamentos</li>
+        </ul>
+    </div>
+    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+        <h2 style="color:green"><b>Torneo Actual</b></h2>
+        <!-- <label for="select_categorias">Categorias</label>
+        <select id="select_categorias">
+            <option disabled selected>-Seleccionar Categoria-</option>
+            <option value="Play Off Julio">Parejas</option>
+            <option value="Play Off Julio">Solitario</option> -->
+        </select>
+        <div id="tabla_posiciones">
+            <h2 class="float-left">Posiciones</h2>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                          <th scope="posicion" data-sort="posicion">Posicion</th>
+                          <th scope="sort" data-sort="equipo">Equipo</th>
+                          <th scope="sort" data-sort="puntos">Puntos</th>
+                        </tr>
+                      </thead>
+                      <tbody class="list body_posicionesTenis" id="posiciones">
+                        <tr>
+                          <td class="posicion">1</td>
+                          <td class="equipo">Academicos</td>
+                          <td class="puntos">6</td>
+                        </tr>
+                      </tbody>
+                  </table>
+            </div>
+            <button id="btn-abrir-popup" class="btn-abrir-popup">
+              Ingresar Puntos
+            </button>
+        </div>
+        <div class="overlay_tor" id="overlay">
+          <div class="popup" id="popup"> 
+              <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+              <h3>Ingresar Partido</h3>
+              <form action="" id="formulario">
+                  <div class="contenedor-inputs">
+                    <input type="number" id="id" value="" placeholder="Id de equipo" required>
+                    <input type="number" id="puntos" value="" placeholder="puntos" required>
+                  </div>
+                  <button id="boton"class="btn btn-success" type="submit" >
+                    Agregar cambios
+                  </button>
+              </form>
+      </div>
+        </div>
+<!--         <div id="tabla_fixture">
+            <h2 class="float-left">Fixture</h2>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                          <th scope="sort" data-sort="rueda">N° Rueda</th>
+                          <th scope="sort" data-sort="fecha">Fecha</th>
+                          <th scope="sort" data-sort="hora">Hora</th>
+                          <th scope="sort" data-sort="local">Local</th>
+                          <th scope="sort" data-sort="puntosLocal">Puntos Local</th>
+                          <th scope="sort" data-sort="Visitante">Visitante</th>
+                          <th scope="sort" data-sort="puntosVisitante">Puntos Visitante</th>
+                          <th scope="sort" data-sort="hora">Detalle</th>
+                        </tr>
+                      </thead>
+                      <tbody class="list body_fixtureTenis">
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>.</td>
+                          <td>.</td>
+                          <td>.</td>
+                          <td>.</td>
+                          <td>.</td>
+                          <td>.</td>
+                          <td class="detalle">
+                            <button data-toggle="modal" data-target=".bd-example-modal-lg" class="btn btn-primary bot_modal" id="btnAbrirModal"> Ver detalle</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>.</td>
+                          <td>.</td>
+                          <td>.</td>
+                          <td>.</td>
+                        </tr>
+                      </tbody>
+                  </table>
+            </div>
+        </div>
+    <div id="flotante" class="flotante">
+        <div id="modal"class="modal fade bd-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display:block;">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Detalle de partido</h5>
+                  <button type="button" id="btn-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h4 class="titdetaalle1 text-center">Resultado Partido 2/07</h4>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                              <th scope="sort" data-sort="rueda">Local</th>
+                              <th scope="sort" data-sort="fecha">Visitante</th>
+                              <th scope="sort" data-sort="hora">Tipo Partido</th>
+                              <th scope="sort" data-sort="local">1° set</th>
+                              <th scope="sort" data-sort="puntosLocal">2° set</th>
+                              <th scope="sort" data-sort="Visitante">3° set</th>
+                              <th scope="sort" data-sort="puntosVisitante">Observaciones</th>
+                            </tr>
+                          </thead>
+                          <tbody class="list body_fixtureTenis">
+                            <tr>
+                              <td>.</td>
+                              <td>.</td>
+                              <td>.</td>
+                              <td>.</td>
+                              <td>.</td>
+                              <td>.</td>
+                              <td>.</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>.</td>
+                              <td>.</td>
+                              <td>.</td>
+                              <td>.</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>.</td>
+                              <td>.</td>
+                              <td>.</td>
+                              <td>.</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div> -->
+    </div>
+</div>
+
+
+
+
+<script src="mainTorneos.js"></script>
+<script src="main.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+</body>
+</html>

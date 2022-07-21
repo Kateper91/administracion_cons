@@ -1,20 +1,12 @@
-const btnSwitch = document.querySelector('#switch');
 
-btnSwitch.addEventListener('click', ()=>{
-    document.body.classList.toggle('dark');
-    btnSwitch.classList.toggle('active');
-    if(document.body.classList.contains('dark')){
-        localStorage.setItem('dark-mode','true');
-    }else{
-        localStorage.setItem('dark-mode','false');
-    }
-});
+let user;
+let userStorage = sessionStorage.getItem("usuario");
 
-
-if(localStorage.getItem('dark-mode')=== 'true'){
-    document.body.classList.add('dark');
+if(userStorage){
+    user = userStorage;
+    let response = `Bienvenido ${user}`;
+    alert(response);
 }else{
-    document.body.classList.remove('dark')
+    user =prompt("ingrese su nombre");
+    sessionStorage.setItem("usuario", user);
 }
-
-
