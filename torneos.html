@@ -77,26 +77,26 @@
                       </tbody>
                   </table>
             </div>
-            <button id="btn-abrir-popup" class="btn-abrir-popup">
+            <button id="btnAbrirModal" class="btn-abrir-popup">
               Ingresar Puntos
             </button>
         </div>
-        <div class="overlay_tor" id="overlay">
-          <div class="popup" id="popup"> 
-              <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+        <div class="overlay_tor" id="overlay_tor">
+          <div class="popup" id="modal"> 
+              <a href="#" id="btn-close" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
               <h3>Ingresar Partido</h3>
               <form action="" id="formulario">
                   <div class="contenedor-inputs">
-                    <input type="number" id="id" value="" placeholder="Id de equipo" required>
+                    <input type="number" id="numero" value="" placeholder="Id de equipo" required>
                     <input type="number" id="puntos" value="" placeholder="puntos" required>
                   </div>
-                  <button id="boton"class="btn btn-success" type="submit" >
+                  <button id="boton"class="btn btn-success" type="submit" onclick="cambiar();">
                     Agregar cambios
                   </button>
               </form>
       </div>
         </div>
-<!--         <div id="tabla_fixture">
+<!--    <div id="tabla_fixture">
             <h2 class="float-left">Fixture</h2>
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -138,8 +138,8 @@
                       </tbody>
                   </table>
             </div>
-        </div>
-    <div id="flotante" class="flotante">
+  </div>
+        <div id="flotante" class="flotante">
         <div id="modal"class="modal fade bd-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display:block;">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
@@ -197,15 +197,15 @@
               </div>
             </div>
         </div>
+    </div> 
     </div> -->
     </div>
 </div>
 
 
 
-
 <script src="mainTorneos.js"></script>
-<script src="main.js"></script>
+<!-- <script src="main.js"></script> -->
 <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
