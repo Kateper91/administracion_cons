@@ -37,7 +37,7 @@ function cambiarPuntos(id, puntos) {
   equiposEncontrado.puntos = puntos;
   localStorage.setItem("equipos", JSON.stringify(equiposStorage));
 }
-let id = document.getElementById("numero").value;
-let puntos = document.getElementById("puntos").value;
+let id = parseInt(prompt("Insertar el Id del equipo")).;
+let puntos = prompt("Insertar puntos totales del equipo)";
 cambiarPuntos(id, puntos);
 
