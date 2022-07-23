@@ -41,7 +41,7 @@ btnCerrarPopup.addEventListener('click', function(e){
 });
 
 const capturar = () =>{
-    function Gastos(fecha, gasto, detalle, costo){
+    function gastos(fecha, gasto, detalle, costo){
 		this.fecha=fecha;
         this.gasto=gasto;
         this.detalle=detalle;
@@ -51,14 +51,16 @@ const capturar = () =>{
     const gastoCapturar = document.getElementById("gasto").value;
     const detalleCapturar = document.getElementById("detalle").value;
 	const costoCapturar =  document.getElementById("costo").value;
-    
-    nuevosGastos = new Gastos(fechaCapturar,gastoCapturar,detalleCapturar,costoCapturar);
-    agregar();
+    nuevosGastos = new gastos(fechaCapturar,gastoCapturar,detalleCapturar,costoCapturar);
+    if (localStorage.getItem("nuevosGastos") === null) {
+        localStorage.setItem("nuevosGastos", JSON.stringify(nuevosGastos));
+      }
+    agregar(nuevosGastos);
 }
 const baseDatos = [];
-const agregar = () => {
-    baseDatos.push(nuevosGastos);
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevosGastos.fecha+'</td><td>'+nuevosGastos.gasto+'</td><td>'+nuevosGastos.detalle+'</td><td>'+nuevosGastos.costo+'</td></tbody>';
+const agregar = (gastos) => {
+    baseDatos.push(gastos);
+    document.getElementById("tabla", JSON.stringify(gastos)).innerHTML += '<tbody><td>'+nuevosGastos.fecha+'</td><td>'+nuevosGastos.gasto+'</td><td>'+nuevosGastos.detalle+'</td><td>'+nuevosGastos.costo+'</td></tbody>';
     console.log(baseDatos)
 };
 
